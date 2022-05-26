@@ -18,10 +18,12 @@
   },
   "homepage": "https://github.com/Ecommerce-Sports/Ecommerce-Server#readme",
   "devDependencies": {
-    "express": "^4.18.0",
     "nodemon": "^2.0.15",
-    "pg": "^8.7.3",
-    "sequelize": "^6.19.0",
     "sequelize-cli": "^6.4.1"
+  },
+  "dependencies": {
+    "express": "^4.18.1",
+    "pg": "^8.7.3",
+    "sequelize": "^6.20.0"
   }
 }
