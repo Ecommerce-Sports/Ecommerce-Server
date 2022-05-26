@@ -1,0 +1,54 @@
+[
+    {
+        "no_invoice" : "121",        
+        "nama_lengkap" :"Cahya",
+        "nama_kota" : "Cilacap",
+        "alamat" : "Ciraja",
+        "nama_produk" : "Sepatu",
+        "harga_produk" : 123,
+        "jumlah_produk" : 2,
+        "pengiriman" : "reguler",
+        "metode_pembayaran" : "cod",
+        "total_produk" : 123,
+        "estimasi_hari" : 12
+    },
+    {
+        "no_invoice" : 1212,        
+        "nama_lengkap" :"budi",
+        "nama_kota" : "medan",
+        "alamat" : "medan",
+        "nama_produk" : "bola",
+        "harga_produk" : 1112,
+        "jumlah_produk" : 2,
+        "pengiriman" : "kargo",
+        "metode_pembayaran" : "cod",
+        "total_produk" : 11,
+        "estimasi_hari" : 12
+    },
+    {
+        "no_invoice" : "5143",        
+        "nama_lengkap" :"zulfa",
+        "nama_kota" : "brebes",
+        "alamat" : "bantarkaung",
+        "nama_produk" : "sepatu",
+        "harga_produk" : 1121,
+        "jumlah_produk" : 2,
+        "pengiriman" : "sameday",
+        "metode_pembayaran" : "cod",
+        "total_produk" : 1211,
+        "estimasi_hari" : 11
+    },
+    {
+        "no_invoice" : "121112",                
+        "nama_lengkap" :"alfin",
+        "nama_kota" : "yogya",
+        "alamat" : "karta",
+        "nama_produk" : "bola",
+        "harga_produk" : "1121",
+        "jumlah_produk" : "2",
+        "pengiriman" : "kargo",
+        "metode_pembayaran" : "cod",
+        "total_produk" : "221",
+        "estimasi_hari" : "4"
+    } 
+]

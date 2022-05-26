@@ -1,0 +1,32 @@
+[
+    {
+        "nama_lengkap" : "cahya septia",
+        "jenis_kelamin" : "perempuan",
+        "tanggal_lahir" : "2022-05-01 00:49:11.266+07",
+        "no_hp" : "secret",
+        "email" : "secret",
+        "username" : "secret",
+        "password" : "secret",
+        "alamat" : "secret",
+        "ibu_kandung" : "secret",
+        "pekerjaan" : "secret",
+        "pendapatan" : 1212,
+        "kota" : "secret",
+        "kecamatan" : "secret"
+    },
+    {
+        "nama_lengkap" : "se",
+        "jenis_kelamin" : "se",
+        "tanggal_lahir" : "2022-05-01 00:49:11.266+07",
+        "no_hp" : "se",
+        "email" : "se",
+        "username" : "se",
+        "password" : "se",
+        "alamat" : "se",
+        "ibu_kandung" : "se",
+        "pekerjaan" : "se",
+        "pendapatan" : 1212,
+        "kota" : "se",
+        "kecamatan" : "se"
+    }
+]
