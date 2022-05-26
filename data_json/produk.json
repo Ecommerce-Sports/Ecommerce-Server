@@ -1,0 +1,49 @@
+[
+    {
+        "nama_produk": "Bola Basket",
+        "kategori_produk": "Bola",
+        "stok": 120,
+        "bahan": "Karet",
+        "harga_produk": 90000,
+        "ukuran": "besar",
+        "deskripsi": "bola basket molten GR6l",
+        "gambar_produk": ""
+    },
+    {
+        "nama_produk": "Racket Lining",
+        "kategori_produk": "Badminton",
+        "stok": 99,
+        "bahan": "carbon graphite",
+        "harga_produk": 275000,
+        "ukuran": "",
+        "deskripsi": "raket badminton LINING AERONAUT 9000, bonus senar YONEX BG66 grip tas",
+        "gambar_produk": ""
+    },
+    {
+        "nama_produk": "Tiento Swimsuit",
+        "kategori_produk": "renang",
+        "stok": 345,
+        "bahan": "spandex lycra",
+        "harga_produk": 223000,
+        "ukuran": "",
+        "deskripsi": "tiento Baselayer Sport Rashguard Manset Olahraga Lubang Jari Thumbhole Black Pria"
+    },
+    {
+        "nama_produk": "Shuttlecock",
+        "kategori_produk": "Badminton",
+        "stok": 1011,
+        "bahan": "top goose feather",
+        "harga_produk": 30000,
+        "ukuran": "",
+        "deskripsi": "frasser Shuttlecock Badminton merupakan shuttlecock yang dapat melayang dengan sempurna di udara"
+    },
+    {
+        "nama_produk": "Senar bg66",
+        "kategori_produk": "Badminton",
+        "stok": 45,
+        "bahan": "",
+        "harga_produk": 85000,
+        "ukuran": "",
+        "deskripsi": "Senar BG66 SOFT FEELING ORIGINAL 100%"
+    }
+]

@@ -1,6 +1,6 @@
 {
   "development": {
-    "username": "bbs",
+    "username": "postgres",
     "password": "postgres",
     "database": "ecommerce-server",
     "host": "localhost",
