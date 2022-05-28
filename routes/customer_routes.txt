@@ -1,0 +1,9 @@
+const express = require("express");
+const routes = express();
+const Customer_Controller = require("../controllers/customer_controllers")
+
+routes.get("/", Customer_Controller.get_customers)
+routes.post("/",Customer_Controller.add_customers)
+routes.get("/:id", Customer_Controller.get_one_customers)
+
+module.exports = routes
