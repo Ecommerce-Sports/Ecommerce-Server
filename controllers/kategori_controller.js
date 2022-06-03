@@ -24,7 +24,7 @@ class Kategori_controller {
             }
         })
         .catch((err) => {
-            console.log(err, `<<< error get one user`);
+            console.log(err, `<<< error get one categories`);
         })
     }
 
