@@ -1,12 +1,19 @@
+require('dotenv').config();
+
 const express = require("express");
 const app = express();
 const PORT = 3000;
-const route = require("./routes")
+const route = require("./routes");
+const Cors = require("cors");
+const errHandler = require("./middlewares/errHandler");
 
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded ({ extended : true }));
 app.use(express.json());
-app.use("/", (route))
+app.use(Cors());
+
+app.use("/", route);
+app.use(errHandler)
 
 app.listen(PORT, ()=> {
-    console.log(`listening at port http://localhost:${PORT}`);
+    console.log(`listening at http://localhost:${PORT}`);
 });

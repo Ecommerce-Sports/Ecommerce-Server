@@ -2,7 +2,7 @@
   "development": {
     "username": "bbs",
     "password": "postgres",
-    "database": "ecommerce-server-ica",
+    "database": "ecommerce-server",
     "host": "localhost",
     "dialect": "postgres"
   },
