@@ -1,3 +1,4 @@
+const { Model } = require("sequelize/types");
 const {Kategori_Sport} = require("../models");
 
 class Kategori_controller {
@@ -39,6 +40,20 @@ class Kategori_controller {
         .catch((err) => {
             console.log(err, `<<< error add categories`);
         })
+    }
+
+    static update_categories(req, res, next){
+        Model.categories.update(
+            {
+                nama_kategori : req.body.nama_kategori
+            },
+            {
+                where: {
+                    id: req.params.id,
+                },
+            }
+        )
+        .then()
     }
 }
 
