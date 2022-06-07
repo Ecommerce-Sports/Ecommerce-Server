@@ -2,7 +2,7 @@
   "development": {
     "username": "bbs",
     "password": "postgres",
-    "database": "ecommerce-server-testing-merge1",
+    "database": "ecommerce-server-development",
     "host": "localhost",
     "dialect": "postgres"
   },

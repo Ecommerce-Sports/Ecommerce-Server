@@ -33,7 +33,7 @@ class UserController {
 
             let payload = {
                 id : data.id,
-                email : data.email
+                email : data.email,
             };
 
             let token = generateToken(payload);
