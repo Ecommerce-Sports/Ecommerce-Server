@@ -1,0 +1,26 @@
+[
+    {
+        "nama_produk": "Bola Basket",
+        "harga": 90.000,
+        "stok": 3,
+        "total_pembayaran": 270000
+    },
+    {
+        "nama_produk": "Racket Lining",
+        "harga": 275000,
+        "stok": 1,
+        "total_pembayaran": 275000
+    },
+    {
+        "nama_produk": "Bola Basket",
+        "harga": 90000,
+        "stok": 1,
+        "total_pembayaran": 90000
+    },
+    {
+        "nama_produk": "Tiento Swimsuit",
+        "harga": 223000,
+        "stok": 1,
+        "total_pembayaran": 223000
+    }
+]
