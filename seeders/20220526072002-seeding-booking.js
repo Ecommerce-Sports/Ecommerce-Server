@@ -1,6 +1,7 @@
 'use strict';
-let csat = require("../data_json/csats.json");
-csat = csat.map((e) => {
+
+let pemesanan = require("../data_json/bookings.json");
+pemesanan = pemesanan.map((e) => {
   e.createdAt = new Date();
   e.updatedAt = new Date();
   return e;
@@ -17,7 +18,7 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    await queryInterface.bulkInsert('Csats', csat, {});
+    await queryInterface.bulkInsert('Bookings', pemesanan, {});
   },
 
   async down(queryInterface, Sequelize) {
@@ -27,6 +28,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('Csats', null, {});
+    await queryInterface.bulkDelete('Bookings', null, {});
   }
 };

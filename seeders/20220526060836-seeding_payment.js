@@ -1,13 +1,14 @@
 'use strict';
-let csat = require("../data_json/csats.json");
-csat = csat.map((e) => {
-  e.createdAt = new Date();
-  e.updatedAt = new Date();
+let pembayaran = require("../data_json/payments.json");
+pembayaran = pembayaran.map((e)=>{
+  e.createdAt=new Date();
+  e.updatedAt=new Date();
   return e;
-});
+  
+})
 
 module.exports = {
-  async up(queryInterface, Sequelize) {
+  async up (queryInterface, Sequelize) {
     /**
      * Add seed commands here.
      *
@@ -17,16 +18,16 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    await queryInterface.bulkInsert('Csats', csat, {});
+     await queryInterface.bulkInsert('Payments', pembayaran,{});
   },
 
-  async down(queryInterface, Sequelize) {
+  async down (queryInterface, Sequelize) {
     /**
      * Add commands to revert seed here.
      *
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('Csats', null, {});
+     await queryInterface.bulkDelete('Payments', null, {});
   }
 };

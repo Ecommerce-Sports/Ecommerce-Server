@@ -1,12 +1,11 @@
 'use strict';
-//petik = model
-
-let customer = require("../data_json/customers.json");
-customer = customer.map((e)=>{
+let detail_pemesanan = require("../data_json/detail_orders.json");
+detail_pemesanan = detail_pemesanan.map((e)=>{
   e.createdAt=new Date();
   e.updatedAt=new Date();
   return e;
 })
+
 module.exports = {
   async up (queryInterface, Sequelize) {
     /**
@@ -18,7 +17,7 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    await queryInterface.bulkInsert('Customers', customer,{});
+     await queryInterface.bulkInsert('Detail_Orders', detail_pemesanan,{});
   },
 
   async down (queryInterface, Sequelize) {
@@ -28,6 +27,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-     await queryInterface.bulkDelete('Customers', null, {});
+     await queryInterface.bulkDelete('Detail_Orders', null, {});
   }
 };

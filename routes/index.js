@@ -1,28 +1,28 @@
 const express = require("express");
 const routes = express.Router();
-const kategori_routes = require("./kategori_routes")
-const customer_routes = require("./customer_routes")
-const pembayaran_routes = require("./pembayaran_routes")
-const pesanan_routes = require("./pesanan_routes")
+const categories_routes = require("./categories_routes")
+const customers_routes = require("./customers_routes")
+const payments_routes = require("./payments_routes")
+const bookings_routes = require("./bookings_routes")
 const user_routes = require("./user_routes");
 const todo_routes = require("./todoRoute");
-const keinginan_routes = require("./keinginan_routes")
-const produk_routes = require("./produk_routes")
-const keranjang_routes = require("./keranjang_routes")
-const pemesanan_routes = require("./pemesanan_routes")
-const csat_routes = require("./csat_routes")
+const whislists_routes = require("./whislists_routes")
+const products_routes = require("./products_routes")
+const carts_routes = require("./carts_routes")
+const detail_order_routes = require("./detail_order_routes")
+const csats_routes = require("./csats_routes")
 
 
-routes.use("/kategori", kategori_routes)
-routes.use("/customer", customer_routes)
-routes.use("/pembayaran", pembayaran_routes)
-routes.use("/pesanan", pesanan_routes)
+routes.use("/category", categories_routes)
+routes.use("/customer", customers_routes)
+routes.use("/payment", payments_routes)
+routes.use("/detailOrder", detail_order_routes)
 routes.use("/user", user_routes);
 routes.use("/todo", todo_routes);
-routes.use("/keinginan", keinginan_routes)
-routes.use("/produk", produk_routes)
-routes.use("/keranjang", keranjang_routes)
-routes.use("/pemesanan", pemesanan_routes)
-routes.use("/csat", csat_routes)
+routes.use("/whislist", whislists_routes)
+routes.use("/product", products_routes)
+routes.use("/cart", carts_routes)
+routes.use("/booking", bookings_routes)
+routes.use("/csat", csats_routes)
 
 module.exports = routes
