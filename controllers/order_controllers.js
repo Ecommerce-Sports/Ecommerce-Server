@@ -2,12 +2,18 @@ const { Order } = require("../models")
 
 class Order_Controller {
     static get_orderings(req, res, next) {
+        const { invoice } = req.query;
+
         Order.findAll()
             .then((data) => {
                 if (!data) {
                     throw ({ msg: `maaf data anda masih kosong` })
                 } else {
-                    res.status(200).json(data)
+                    let dataFilter = data;
+                    if (invoice !== undefined) {
+                    dataFilter = dataFilter.filter((e) => e.nomor_invoice.toLowerCase().includes(invoice.toLowerCase()));
+                    }
+                    res.status(200).json(dataFilter)
                 }
             })
     }

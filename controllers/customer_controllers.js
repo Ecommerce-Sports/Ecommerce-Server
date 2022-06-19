@@ -2,12 +2,18 @@ const {Customer} = require("../models");
 
 class Customer_Controller {
     static get_customers(req, res, next){
+        const { name } = req.query;
+
         Customer.findAll()
         .then((data) => {
             if(!data) {
                 throw ({ msg: `maaf data anda masih kosong` })
             } else {
-                res.status(200).json(data)
+                let dataFilter = data;
+                if (name !== undefined) {
+                    dataFilter = dataFilter.filter((e) => e.nama_lengkap.toLowerCase().includes(name.toLowerCase()));
+                }
+                res.status(200).json(dataFilter)
             }
         })
     }

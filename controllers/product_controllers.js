@@ -2,11 +2,17 @@ const { Product } = require("../models");
 
 class Product_Controller {
   static get_products(req, res, next) {
+    const { name } = req.query;
+
     Product.findAll().then((data) => {
       if (!data) {
         throw { msg: `maaf data anda masih kosong` };
       } else {
-        res.status(200).json(data);
+        let dataFilter = data;
+        if (name !== undefined) {
+          dataFilter = dataFilter.filter((e) => e.nama_produk.toLowerCase().includes(name.toLowerCase()));
+        }
+        res.status(200).json(dataFilter);
       }
     });
   }

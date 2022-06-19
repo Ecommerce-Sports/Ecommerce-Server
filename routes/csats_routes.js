@@ -1,6 +1,9 @@
 const express = require("express");
 const routes = express();
-const csat_controllers = require("../controllers/csat_controllers")
+const authentication = require("../middlewares/authentication");
+const csat_controllers = require("../controllers/csat_controllers");
+
+routes.use(authentication);
 
 routes.get("/", csat_controllers.get_csats)
 routes.post("/", csat_controllers.add_csats)

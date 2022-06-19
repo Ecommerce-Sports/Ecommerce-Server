@@ -1,6 +1,9 @@
 const express = require("express");
 const routes = express();
-const product_controllers = require("../controllers/product_controllers")
+const authentication = require("../middlewares/authentication");
+const product_controllers = require("../controllers/product_controllers");
+
+routes.use(authentication);
 
 routes.get("/", product_controllers.get_products)
 routes.post("/", product_controllers.add_products)
