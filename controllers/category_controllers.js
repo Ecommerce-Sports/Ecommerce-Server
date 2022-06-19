@@ -30,7 +30,8 @@ class Category_Controller {
 
     static add_categories(req, res, next){
         let body = {
-            nama_kategori : req.body.nama_kategori
+            nama_kategori : req.body.nama_kategori,
+            gambar_produk : req.body.gambar_produk
         }
         Category.create(body)
         .then((data) => { 
@@ -39,6 +40,18 @@ class Category_Controller {
         .catch((err) => {
             console.log(err, `<<< error add categories`);
         })
+    }
+
+    static async delete_category(req, res, next) {
+        try {
+            let id = +req.params.id
+            const data = await Category.destroy({ where: { id } })
+            if(data) {
+                res.status(201).json({ msg: `data berhasil dihapus` })
+            }
+        } catch (error) {
+            next(error)
+        }
     }
 }
 

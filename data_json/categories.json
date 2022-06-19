@@ -1,17 +1,22 @@
 [
     {
-        "nama_kategori" : "sepatu"
+        "nama_kategori": "sepatu",
+        "gambar_produk": "http://localhost:3000/uploads/sepatu-1655619222359.png"
     },
     {
-        "nama_kategori" : "bola basket"
+        "nama_kategori" : "bola basket",
+        "gambar_produk": "http://localhost:3000/uploads/basketball-svgrepo-com-1655619238229.svg"
     },
     {
-        "nama_kategori" : "bola voli"
+        "nama_kategori" : "bola voli",
+        "gambar_produk": "http://localhost:3000/uploads/volleyball-svgrepo-com-1655619265363.svg"
     },
     {
-        "nama_kategori" : "bola tenis"
+        "nama_kategori" : "bola tenis",
+        "gambar_produk": "http://localhost:3000/uploads/table-tennis-svgrepo-com-1655619310954.svg"
     },
     {
-        "nama_kategori" : "raket"
+        "nama_kategori" : "raket",
+        "gambar_produk": "http://localhost:3000/uploads/tennis-svgrepo-com-1655619285986.svg"
     }
 ]

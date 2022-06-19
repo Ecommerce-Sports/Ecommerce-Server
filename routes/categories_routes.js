@@ -5,5 +5,6 @@ const category_controllers = require("../controllers/category_controllers")
 routes.get("/", category_controllers.get_categories)
 routes.post("/", category_controllers.add_categories)
 routes.get("/:id", category_controllers.get_one_categories)
+routes.delete("/:id", category_controllers.delete_category)
 
 module.exports = routes
