@@ -49,6 +49,7 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
+    role: DataTypes.STRING,
     no_telepon: {
       type : DataTypes.STRING,
       validate : {

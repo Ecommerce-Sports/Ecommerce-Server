@@ -17,6 +17,9 @@ module.exports = {
       nama_belakang: {
         type: Sequelize.STRING
       },
+      role: {
+        type: Sequelize.STRING
+      },
       no_telepon: {
         type: Sequelize.STRING
       },

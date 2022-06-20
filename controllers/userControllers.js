@@ -5,9 +5,9 @@ const { generateToken } = require("../helpers/jwt");
 class UserController {
     static async register (req, res, next) {
         try {
-            let { nama_depan, nama_belakang, tanggal_lahir, no_telepon, username, email, password } = req.body;
+            let { nama_depan, nama_belakang, role, tanggal_lahir, no_telepon, username, email, password } = req.body;
     
-            const data = await User.create({ nama_depan, nama_belakang, tanggal_lahir, no_telepon, username, email, password });
+            const data = await User.create({ nama_depan, nama_belakang, role, tanggal_lahir, no_telepon, username, email, password });
             res.status(201).json({
                 msg : `registration success`,
                 id : data.id,
@@ -39,6 +39,7 @@ class UserController {
             let token = generateToken(payload);
             res.status(200).json({
                 msg : 'login success',
+                role: data.role,
                 token
             });
         } catch (error) {
