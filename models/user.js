@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      User.hasMany(models.Cart)
     }
   }
   User.init({
@@ -49,6 +50,9 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
+    jenis_kelamin: DataTypes.STRING,
+    pekerjan: DataTypes.STRING,
+    foto_profile: DataTypes.STRING,
     role: DataTypes.STRING,
     no_telepon: {
       type : DataTypes.STRING,

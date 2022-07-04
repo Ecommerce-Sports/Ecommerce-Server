@@ -1,10 +1,13 @@
-const { Product } = require("../models");
+const { Product, Category } = require("../models");
 
 class Product_Controller {
   static get_products(req, res, next) {
     const { name } = req.query;
 
-    Product.findAll().then((data) => {
+    Product.findAll({
+      includes: [{ model: Category }]
+    })
+    .then((data) => {
       if (!data) {
         throw { msg: `maaf data anda masih kosong` };
       } else {
@@ -36,7 +39,7 @@ class Product_Controller {
   static add_products(req, res, next) {
     let body = {
       nama_produk: req.body.nama_produk,
-      kategori_produk: req.body.kategori_produk,
+      CategoryId: req.body.CategoryId,
       stok: req.body.stok,
       bahan: req.body.bahan,
       harga_produk: req.body.harga_produk,
@@ -75,7 +78,7 @@ class Product_Controller {
       let id = req.params.id;
       let obj = {
         nama_produk: req.body.nama_produk,
-        kategori_produk: req.body.kategori_produk,
+        CategoryId: req.body.CategoryId,
         stok: req.body.stok,
         bahan: req.body.bahan,
         harga_produk: req.body.harga_produk,

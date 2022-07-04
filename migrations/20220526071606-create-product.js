@@ -11,9 +11,6 @@ module.exports = {
       nama_produk: {
         type: Sequelize.STRING
       },
-      kategori_produk: {
-        type: Sequelize.STRING
-      },
       stok: {
         type: Sequelize.INTEGER
       },
@@ -27,10 +24,16 @@ module.exports = {
         type: Sequelize.STRING
       },
       deskripsi: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       gambar_produk: {
         type: Sequelize.STRING
+      },
+      CategoryId: {
+        type: Sequelize.INTEGER
+      },
+      berat: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

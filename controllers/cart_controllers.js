@@ -10,15 +10,18 @@ class Cart_Controller {
                     res.status(200).json(data)
                 }
             })
+            .catch((err) => {
+                console.log(err, `<<< error det all cart`);
+            })
     }
 
     static get_one_carts(req, res, next) {
-        let id = req.params.id;
+        let email = req.params.email;
 
-        Cart.findByPk(id)
+        Cart.findOne({where: {email}})
             .then((data) => {
                 if (!data) {
-                    throw ({ msg: `maaf id yang anda masukkan tidak di temukan` })
+                    throw ({ msg: `maaf email yang anda masukkan tidak di temukan` })
                 } else {
                     res.status(200).json(data)
                 }
@@ -30,20 +33,54 @@ class Cart_Controller {
 
     static add_carts(req, res, next) {
         let body = {
-            nama_produk: req.body.nama_produk,
-            harga: req.body.harga,
-            stok: req.body.stok,
-            total: req.body.total
+            alamat_pengiriman: req.body.alamat_pengiriman,
+            biaya_pengiriman: req.body.biaya_pengiriman,
+            UserId: req.body.UserId,
+            email: req.body.email,
+            order: req.body.order
         }
 
-        Cart.create(body)
-            .then((data) => {
-                res.status(201).json({ msg: `selamat barang yang ada pilih berhasil ditambahkan di keranjang` })
-            })
-            .catch((err) => {
-                console.log(err, `<<< error add carts`);
-            })
+        let email = req.body.email;
+
+        let dataOrder = [];
+        let newData = {};
+
+        Cart.findOne({ where: { email }})
+        .then((data) => {
+            if(data) {
+                dataOrder = data.order;
+                dataOrder.push(body.order[0])
+                newData = {
+                    ...data,
+                    order: dataOrder
+                }
+                Cart.update(newData, { where: { email } })
+                .then((data) => {
+                    res.status(201).json({ msg: `data berhasil ditambahkan` });
+                })
+            } else {
+                Cart.create(body)
+                .then((data) => {
+                    res.status(201).json({ msg: `selamat barang yang ada pilih berhasil ditambahkan di keranjang` })
+                })
+                .catch((err) => {
+                    console.log(err, `<<< error add carts`);
+                })
+            }
+        })        
     }
+
+    static async delete_cart(req, res, next) {
+        try {
+          let id = +req.params.id;
+          const data = await Cart.destroy({ where: { id } });
+          if (data) {
+            res.status(201).json({ msg: `data berhasil dihapus` });
+          }
+        } catch (error) {
+          next(error);
+        }
+      }
 }
 
 module.exports = Cart_Controller;

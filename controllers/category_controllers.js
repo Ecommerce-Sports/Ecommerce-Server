@@ -1,8 +1,10 @@
-const {Category} = require("../models");
+const {Category, Product} = require("../models");
 
 class Category_Controller {
     static get_categories(req, res, next){
-        Category.findAll()
+        Category.findAll({ 
+            includes: [{ model: Product}]
+          })
         .then((data) => {
             if(!data) {
                 throw ({ msg: `maaf data anda masih kosong` })
@@ -15,7 +17,10 @@ class Category_Controller {
     static get_one_categories(req, res, next){
         let id = req.params.id;
 
-        Category.findByPk(id)
+        Category.findByPk(id,{
+            where: {id},
+            include: [{ model: Product }]
+        })
         .then((data) => {            
             if(!data) {
                 throw ({ msg: `maaf id yang anda masukkan tidak di temukan` })

@@ -1,4 +1,4 @@
-const { User } = require("../models");
+const { User, Cart } = require("../models");
 const { comparePass } = require("../helpers/bcrypt");
 const { generateToken } = require("../helpers/jwt");
 
@@ -40,11 +40,42 @@ class UserController {
             res.status(200).json({
                 msg : 'login success',
                 role: data.role,
+                email: data.email,
                 token
             });
         } catch (error) {
             next(error)
         }
+    };
+
+    static get_user (req, res, next) {
+        User.findAll()
+        .then((data) => {
+            if(!data) {
+                throw ({ msg: `maaf data anda masih kosong` })
+            } else {
+                res.status(200).json(data)
+            }
+        })
+    };
+
+    static get_one_user(req, res, next){
+        let email = req.params.email;
+
+        User.findOne({ 
+            where: {email},
+            include: [Cart]
+        })
+        .then((data) => {            
+            if(!data) {
+                throw ({ msg: `maaf email yang anda masukkan tidak di temukan` })
+            } else {
+                res.status(200).json(data)
+            }
+        })
+        .catch((err) => {
+            console.log(err, `<<< error get one user`);
+        })
     };
 };
 

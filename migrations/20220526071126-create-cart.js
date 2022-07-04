@@ -8,17 +8,14 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      nama_produk: {
+      email: {
         type: Sequelize.STRING
       },
-      harga: {
+      UserId: {
         type: Sequelize.INTEGER
       },
-      stok: {
-        type: Sequelize.INTEGER
-      },
-      total_pembayaran: {
-        type: Sequelize.INTEGER
+      order: {
+        type: Sequelize.JSON
       },
       createdAt: {
         allowNull: false,

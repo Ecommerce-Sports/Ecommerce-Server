@@ -29,6 +29,15 @@ module.exports = {
       username: {
         type: Sequelize.STRING
       },
+      jenis_kelamin: {
+        type: Sequelize.STRING
+      },
+      pekerjan: {
+        type: Sequelize.STRING
+      },
+      foto_profile: {
+        type: Sequelize.STRING
+      },
       password: {
         type: Sequelize.STRING
       },

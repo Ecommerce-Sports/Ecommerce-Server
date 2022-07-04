@@ -11,17 +11,19 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Product.belongsTo(models.Category)
     }
   }
   Product.init({
     nama_produk: DataTypes.STRING,
-    kategori_produk: DataTypes.STRING,
     stok: DataTypes.INTEGER,
     bahan: DataTypes.STRING,
     harga_produk: DataTypes.INTEGER,
     ukuran: DataTypes.STRING,
-    deskripsi: DataTypes.STRING,
-    gambar_produk: DataTypes.STRING
+    deskripsi: DataTypes.TEXT,
+    gambar_produk: DataTypes.STRING,
+    CategoryId: DataTypes.INTEGER,
+    berat: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Product',
