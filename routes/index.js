@@ -14,7 +14,7 @@ const banner_routes = require("./banner_routes");
 const rajaongkir_routes = require("./rajaongkir_routes");
 const { route } = require("./categories_routes");
 
-route.get("/", (req, res) => res.status(200).json({ message: "welcome to ecommerce sports admin server" }))
+routes.get("/", (req, res) => res.status(200).json({ message: "welcome to ecommerce sports admin server" }))
 routes.use("/user", user_routes);
 routes.use("/cart", carts_routes);
 routes.use("/csat", csats_routes);
