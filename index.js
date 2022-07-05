@@ -7,7 +7,6 @@ const app = express();
 const PORT = 3000;
 const route = require("./routes");
 const bodyParser = require("body-parser");
-// const multer = require("multer");
 const Cors = require("cors");
 const path = require("path");
 const errHandler = require("./middlewares/errHandler");
